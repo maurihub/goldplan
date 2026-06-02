@@ -3,35 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo Multimarca - Concesionario Digital</title>
+    <title>Catálogo Multimarca Completo - Concesionario Digital</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://jsdelivr.net" rel="stylesheet">
     <!-- Iconos de Bootstrap -->
     <link href="https://jsdelivr.net" rel="stylesheet">
     
     <style>
-        /* Estilos Generales y Tipografía */
+        /* Estilos Base */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f6f9;
             color: #333;
         }
         
-        /* Navbar Personalizado */
-        .navbar-brand img {
-            max-height: 40px;
-        }
-        
-        /* Sección Hero */
+        /* Sección Principal Hero */
         .hero-section {
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            background: linear-gradient(135deg, #111e25 0%, #1c3540 50%, #274856 100%);
             color: white;
             padding: 80px 0;
             text-align: center;
-            position: relative;
         }
         
-        /* Filtros de Navegación */
+        /* Botones de Navegación */
         .brand-nav-btn {
             border-radius: 30px;
             padding: 10px 25px;
@@ -39,7 +33,7 @@
             transition: all 0.3s ease;
         }
         
-        /* Tarjetas de Autos Modernas */
+        /* Tarjetas de Vehículos */
         .card-car {
             border: none;
             border-radius: 15px;
@@ -53,7 +47,7 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
         }
         
-        /* Contenedor de Imágenes Proporcional */
+        /* Contenedor de Imágenes */
         .car-img-container {
             height: 220px;
             display: flex;
@@ -61,7 +55,6 @@
             justify-content: center;
             background-color: #ffffff;
             padding: 15px;
-            position: relative;
         }
         .car-img-container img {
             max-height: 100%;
@@ -73,7 +66,7 @@
             transform: scale(1.05);
         }
         
-        /* Badges de Marcas */
+        /* Etiquetas de Marca */
         .badge-brand {
             font-size: 0.75rem;
             text-transform: uppercase;
@@ -85,7 +78,7 @@
         .badge-fiat { background-color: #900; color: white; }
         .badge-peugeot { background-color: #000026; color: white; }
         
-        /* Títulos de Secciones */
+        /* Líneas de Diseño por Sección */
         .section-title {
             position: relative;
             padding-bottom: 12px;
@@ -105,7 +98,7 @@
         #fiat .section-title::after { background-color: #900; }
         #peugeot .section-title::after { background-color: #000026; }
 
-        /* Botón Flotante de WhatsApp */
+        /* Botón de WhatsApp */
         .wpp-float {
             position: fixed;
             bottom: 25px;
@@ -121,8 +114,8 @@
             font-size: 30px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             z-index: 1000;
-            transition: all 0.3s ease;
             text-decoration: none;
+            transition: all 0.3s ease;
         }
         .wpp-float:hover {
             transform: scale(1.1);
@@ -133,13 +126,13 @@
 </head>
 <body>
 
-    <!-- Menú de Navegación -->
+    <!-- Navegación Superior -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold text-uppercase tracking-wider" href="#">
-                <i class="bi bi-speedometer2 me-2 text-warning"></i>MauriHub Multimarca
+            <a class="navbar-brand fw-bold text-uppercase" href="#">
+                <i class="bi bi-speedometer2 me-2 text-warning"></i>MauriHub Showroom
             </a>
-            <button class="navbar-collapse navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -152,22 +145,22 @@
         </div>
     </nav>
 
-    <!-- Presentación Principal (Hero) -->
+    <!-- Banner Hero -->
     <header class="hero-section">
         <div class="container py-4">
-            <h1 class="display-3 fw-bold tracking-tight mb-3">Catálogo Multimarca Exclusivo</h1>
-            <p class="lead text-white-50 fs-4 max-w-2xl mx-auto mb-4">Descubrí las últimas novedades, diseños y fichas técnicas de los modelos líderes del mercado.</p>
+            <h1 class="display-3 fw-bold mb-3">Catálogo Multimarca Consolidado</h1>
+            <p class="lead text-white-50 fs-4 mb-4">Explora todos los modelos disponibles organizados por marca.</p>
             <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
-                <a href="#volkswagen" class="btn btn-primary brand-nav-btn shadow-sm"><i class="bi bi-car-front me-2"></i>Gama VW</a>
-                <a href="#fiat" class="btn btn-danger brand-nav-btn shadow-sm"><i class="bi bi-car-front me-2"></i>Gama Fiat</a>
-                <a href="#peugeot" class="btn btn-dark brand-nav-btn shadow-sm"><i class="bi bi-car-front me-2"></i>Gama Peugeot</a>
+                <a href="#volkswagen" class="btn btn-primary brand-nav-btn shadow-sm">Gama VW</a>
+                <a href="#fiat" class="btn btn-danger brand-nav-btn shadow-sm">Gama Fiat</a>
+                <a href="#peugeot" class="btn btn-dark brand-nav-btn shadow-sm">Gama Peugeot</a>
             </div>
         </div>
     </header>
 
-    <!-- SECCIÓN VOLKSWAGEN -->
+    <!-- SECCIÓN VOLKSWAGEN (Amarok, T-Cross, Virtus) -->
     <main class="container py-5" id="volkswagen">
-        <h2 class="section-title text-dark">Gama Volkswagen</h2>
+        <h2 class="section-title text-dark">Volkswagen</h2>
         <div class="row g-4">
             <!-- Amarok -->
             <div class="col-12 col-md-6 col-lg-4">
@@ -178,9 +171,9 @@
                     <div class="card-body d-flex flex-column">
                         <div class="mb-2"><span class="badge badge-brand badge-vw">Pick-up</span></div>
                         <h4 class="card-title fw-bold mb-3">Amarok</h4>
-                        <p class="card-text text-muted flex-grow-1">Potencia, robustez inteligente y el confort de marcha de un sedán premium de alta gama.</p>
+                        <p class="card-text text-muted flex-grow-1">Potencia total, tracción inteligente y el mejor confort de conducción del segmento comercial pesado.</p>
                         <hr class="text-black-50">
-                        <a href="https://vw.com.ar" target="_blank" class="btn btn-dark w-100 py-2 rounded-3">Conocer Más</a>
+                        <a href="https://vw.com.ar" target="_blank" class="btn btn-dark w-100 py-2 rounded-3">Ver Detalles</a>
                     </div>
                 </div>
             </div>
@@ -193,9 +186,9 @@
                     <div class="card-body d-flex flex-column">
                         <div class="mb-2"><span class="badge badge-brand badge-vw">SUV Urbano</span></div>
                         <h4 class="card-title fw-bold mb-3">T-Cross</h4>
-                        <p class="card-text text-muted flex-grow-1">Un SUV versátil y tecnológico, diseñado para superar todos los desafíos cotidianos de la ciudad.</p>
+                        <p class="card-text text-muted flex-grow-1">La SUV compacta líder en habitabilidad, con altos estándares de seguridad y tecnología activa.</p>
                         <hr class="text-black-50">
-                        <a href="https://vw.com.ar" target="_blank" class="btn btn-dark w-100 py-2 rounded-3">Conocer Más</a>
+                        <a href="https://vw.com.ar" target="_blank" class="btn btn-dark w-100 py-2 rounded-3">Ver Detalles</a>
                     </div>
                 </div>
             </div>
@@ -208,18 +201,22 @@
                     <div class="card-body d-flex flex-column">
                         <div class="mb-2"><span class="badge badge-brand badge-vw">Sedán</span></div>
                         <h4 class="card-title fw-bold mb-3">Virtus</h4>
-                        <p class="card-text text-muted flex-grow-1">Diseño estilizado, espacio interior de referencia y conectividad interactiva de última generación.</p>
+                        <p class="card-text text-muted flex-grow-1">Sedán de líneas elegantes con amplio espacio en las plazas traseras y gran capacidad de baúl.</p>
                         <hr class="text-black-50">
-                        <a href="https://vw.com.ar" target="_blank" class="btn btn-dark w-100 py-2 rounded-3">Conocer Más</a>
+                        <a href="https://vw.com.ar" target="_blank" class="btn btn-dark w-100 py-2 rounded-3">Ver Detalles</a>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- SECCIÓN FIAT -->
-    <div class="bg-white py-2">
+    <!-- SECCIÓN FIAT (Titano, Cronos, Mobi) -->
+    <div class="bg-white py-1">
         <section class="container py-5" id="fiat">
-            <h2 class="section-title text-dark">Gama Fiat</h2>
+            <h2 class="section-title text-dark">Fiat</h2>
             <div class="row g-4">
                 <!-- Titano -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card card-car shadow-sm">
+                        <div class="car-img-container">
+                            <img src="https://fiat.com.ar" alt="Fiat Titano" onerror="this.src='https://placehold.co'">
