@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>0KM Destacados | Car One Argentina</title>
+    <title>0KM Ofertas Imbatibles | Car One GoldPlan</title>
     <style>
         :root {
             --carone-dark: #1a1a1a;
-            --carone-red: #9e1b22; /* Tono bordó/rojo institucional Car One */
+            --carone-red: #9e1b22; 
             --carone-red-hover: #7d151a;
             --carone-bg: #f9f9f9;
             --carone-muted: #666666;
             --border-color: #e5e5e5;
+            --gold: #d4af37;
         }
         body {
             font-family: Arial, sans-serif;
@@ -22,7 +23,7 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        /* Navbar estilo Car One */
+        /* Navbar Car One + GoldPlan Sello */
         nav {
             background-color: #ffffff;
             border-bottom: 1px solid var(--border-color);
@@ -38,30 +39,35 @@
             letter-spacing: -1px;
             color: var(--carone-dark);
         }
-        .logo span {
-            color: var(--carone-red);
-        }
-        .nav-links {
-            font-size: 0.9rem;
+        .logo span { color: var(--carone-red); }
+        
+        .badge-goldplan {
+            background: linear-gradient(135deg, #111 0%, #333 100%);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 0.4rem 0.8rem;
+            font-size: 0.75rem;
             font-weight: bold;
             text-transform: uppercase;
-            color: var(--carone-muted);
+            letter-spacing: 1px;
+            border-radius: 3px;
         }
 
         /* Hero Header */
         header {
             background-color: #ffffff;
             text-align: center;
-            padding: 3rem 1rem 2rem 1rem;
+            padding: 3rem 1rem;
             border-bottom: 1px solid var(--border-color);
         }
         header h1 {
             margin: 0;
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: -0.5px;
         }
+        header h1 span { color: var(--carone-red); }
         header p {
             margin: 0.75rem 0 0;
             font-size: 1.1rem;
@@ -73,92 +79,126 @@
             margin: 0 auto;
             padding: 2.5rem 1rem;
         }
+
+        /* Sección Marcas */
+        .marca-section {
+            margin-bottom: 4rem;
+        }
+        .marca-title {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            border-bottom: 3px solid var(--carone-dark);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            letter-spacing: 0.5px;
+        }
         
-        /* Grilla de Marcas y Modelos */
-        .grid-marcas {
+        /* Grilla de Productos */
+        .grid-autos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
-            margin-bottom: 4rem;
         }
         
-        .card-marca {
+        .card-auto {
             background: #ffffff;
             border: 1px solid var(--border-color);
             border-radius: 4px;
-            padding: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-        
-        .card-marca h2 {
-            font-size: 1.3rem;
-            text-transform: uppercase;
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.5px;
-            border-bottom: 2px solid var(--carone-dark);
-            padding-bottom: 0.5rem;
-        }
-        
-        .lista-autos {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .lista-autos li {
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border-color);
-            font-size: 1rem;
-            font-weight: bold;
+            overflow: hidden;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.2s;
         }
-        .lista-autos li:last-child {
-            border-bottom: none;
+        .card-auto:hover {
+            transform: translateY(-4px);
+        }
+        
+        /* Etiquetas de Descuento */
+        .tag-descuento {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--carone-red);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 2px;
+            z-index: 10;
         }
 
-        .btn-select {
+        .wrapper-img {
+            background: #ffffff;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .wrapper-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .info-auto {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .info-auto h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+        .info-auto p {
+            margin: 0 0 1.5rem 0;
+            font-size: 0.9rem;
+            color: var(--carone-muted);
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
+        .btn-cotizar {
             background: transparent;
             color: var(--carone-red);
             border: 1px solid var(--carone-red);
-            padding: 0.5rem 1rem;
+            padding: 0.75rem;
+            text-align: center;
             border-radius: 4px;
             cursor: pointer;
             font-size: 0.85rem;
             font-weight: bold;
             text-transform: uppercase;
             transition: all 0.2s ease;
+            text-decoration: none;
         }
-        .btn-select:hover {
+        .btn-cotizar:hover {
             background: var(--carone-red);
             color: #ffffff;
         }
         
-        /* Sección Formulario - Limpio y Corporativo */
+        /* Formulario Corporativo */
         .form-section {
             background: #ffffff;
             border: 1px solid var(--border-color);
             border-radius: 4px;
             padding: 3rem 2rem;
             max-width: 550px;
-            margin: 0 auto;
+            margin: 4rem auto 0 auto;
         }
-        
         .form-section h3 {
             margin-top: 0;
             text-align: center;
             font-size: 1.4rem;
             text-transform: uppercase;
-            letter-spacing: -0.5px;
             margin-bottom: 2rem;
         }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
+        .form-group { margin-bottom: 1.5rem; }
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
@@ -167,7 +207,6 @@
             text-transform: uppercase;
             color: var(--carone-muted);
         }
-        
         .form-group input, .form-group select {
             width: 100%;
             padding: 0.85rem;
@@ -177,12 +216,6 @@
             font-size: 1rem;
             background-color: #fafafa;
         }
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: var(--carone-dark);
-            background-color: #ffffff;
-        }
-        
         .btn-submit {
             width: 100%;
             background-color: var(--carone-red);
@@ -192,18 +225,12 @@
             font-size: 1rem;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
             border-radius: 4px;
             cursor: pointer;
-            transition: background 0.2s ease;
             margin-top: 1rem;
         }
+        .btn-submit:hover { background-color: var(--carone-red-hover); }
         
-        .btn-submit:hover { 
-            background-color: var(--carone-red-hover); 
-        }
-        
-        /* Footer estilo Car One */
         footer {
             text-align: center;
             padding: 3rem 1rem;
@@ -213,93 +240,50 @@
             font-size: 0.85rem;
             border-top: 4px solid var(--carone-red);
         }
-        footer p {
-            margin: 0.5rem 0;
-            opacity: 0.7;
-        }
-        footer .legal-links {
-            margin-top: 1.5rem;
-        }
-        footer .legal-links a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 0.75rem;
-            opacity: 0.5;
-        }
-        footer .legal-links a:hover {
-            opacity: 1;
-        }
     </style>
 </head>
 <body>
 
-    <!-- Barra de Navegación -->
+    <!-- Navegación -->
     <nav>
         <div class="logo">Car<span>One</span></div>
-        <div class="nav-links">0 KM Seleccionados</div>
+        <div class="badge-goldplan">GoldPlan Agencia Oficial</div>
     </nav>
 
-    <!-- Encabezado Principal -->
+    <!-- Encabezado -->
     <header>
-        <h1>Descubrí tu próximo 0KM</h1>
-        <p>Cotizá de forma online y reservá con el respaldo de Car One</p>
+        <h1>OFERTAS IMBATIBLES <span>0KM</span></h1>
+        <p>Descuentos exclusivos y financiación directa de fábrica por tiempo limitado</p>
     </header>
 
     <div class="container">
         
-        <!-- Grilla de Vehículos por Marca -->
-        <div class="grid-marcas">
-            <!-- Volkswagen -->
-            <div class="card-marca">
-                <h2>Volkswagen</h2>
-                <ul class="lista-autos">
-                    <li>Amarok <button class="btn-select" onclick="seleccionarAuto('Amarok')">Ver Más</button></li>
-                    <li>T-Cross <button class="btn-select" onclick="seleccionarAuto('T-Cross')">Ver Más</button></li>
-                    <li>Virtus <button class="btn-select" onclick="seleccionarAuto('Virtus')">Ver Más</button></li>
-                </ul>
-            </div>
-
-            <!-- Fiat -->
-            <div class="card-marca">
-                <h2>Fiat</h2>
-                <ul class="lista-autos">
-                    <li>Titano <button class="btn-select" onclick="seleccionarAuto('Titano')">Ver Más</button></li>
-                    <li>Cronos <button class="btn-select" onclick="seleccionarAuto('Cronos')">Ver Más</button></li>
-                    <li>Mobi <button class="btn-select" onclick="seleccionarAuto('Mobi')">Ver Más</button></li>
-                </ul>
-            </div>
-
-            <!-- Peugeot -->
-            <div class="card-marca font-peugeot">
-                <h2>Peugeot</h2>
-                <ul class="lista-autos">
-                    <li>Partner <button class="btn-select" onclick="seleccionarAuto('Partner')">Ver Más</button></li>
-                    <li>2008 <button class="btn-select" onclick="seleccionarAuto('2008')">Ver Más</button></li>
-                    <li>208 <button class="btn-select" onclick="seleccionarAuto('208')">Ver Más</button></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Formulario de Captura de Leads -->
-        <div class="form-section" id="contacto">
-            <h3>Solicitar Cotización</h3>
-            <form action="#" method="POST">
-                
-                <div class="form-group">
-                    <label for="auto">Modelo Requerido</label>
-                    <select id="auto" name="auto" required>
-                        <option value="" disabled selected>-- Seleccione el modelo --</option>
-                        <optgroup label="Volkswagen">
-                            <option value="Amarok">Amarok</option>
-                            <option value="T-Cross">T-Cross</option>
-                            <option value="Virtus">Virtus</option>
-                        </optgroup>
-                        <optgroup label="Fiat">
-                            <option value="Titano">Titano</option>
-                            <option value="Cronos">Cronos</option>
-                            <option value="Mobi">Mobi</option>
-                        </optgroup>
-                        <optgroup label="Peugeot">
-                            <option value="Partner">Partner</option>
-                            <option value="2008">2008</option>
-                            <option value="208">208</option>
+        <!-- SECCIÓN VOLKSWAGEN -->
+        <div class="marca-section">
+            <div class="marca-title">Volkswagen</div>
+            <div class="grid-autos">
+                <div class="card-auto">
+                    <div class="tag-descuento">Bonificación Especial</div>
+                    <div class="wrapper-img">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABeCAMAAAC6fHfeAAAAMFBMVEUAAAD///8/Pz9fX19vby93d3d7e3uHh4eXl5ednZ2tra29vb3Hx8fX19ff39/v7+/39/eE0vymAAAAXklEQVR4nO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAMXvAAB966DywAAAABJRU5ErkJggg==" alt="Amarok">
+                    </div>
+                    <div class="info-auto">
+                        <h3>Amarok</h3>
+                        <p>La pick-up más potente de su segmento. Destacada por su confort de marcha, tracción integral 4Motion y excelente valor de reventa en el país.</p>
+                        <button class="btn-cotizar" onclick="seleccionarAuto('Amarok')">Cotizar con Descuento</button>
+                    </div>
+                </div>
+                <div class="card-auto">
+                    <div class="tag-descuento">Tasa 0%</div>
+                    <div class="wrapper-img">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABeCAMAAAC6fHfeAAAAMFBMVEUAAAD///8/Pz9fX19vby93d3d7e3uHh4eXl5ednZ2tra29vb3Hx8fX19ff39/v7+/39/eE0vymAAAAXklEQVR4nO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAMXvAAB966DywAAAABJRU5ErkJggg==" alt="T-Cross">
+                    </div>
+                    <div class="info-auto">
+                        <h3>T-Cross</h3>
+                        <p>El SUV urbano referente en seguridad. Excelente espacio interior, conectividad de última generación y motorización eficiente para la ciudad.</p>
+                        <button class="btn-cotizar" onclick="seleccionarAuto('T-Cross')">Cotizar con Descuento</button>
+                    </div>
+                </div>
+                <div class="card-auto">
+                    <div class="tag-descuento text-danger">Cupos Limitados</div>
+                    <div class="wrapper-img">
