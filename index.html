@@ -134,6 +134,369 @@
 
         .wrapper-img {
             background: #ffffff;
+            height: 200px; /* Ajustado para mejor consistencia */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .wrapper-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .info-auto {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .info-auto h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .info-auto p {
+            margin: 0 0 1.5rem 0;
+            font-size: 0.9rem;
+            color: var(--brand-muted);
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .btn-cotizar {
+            background: transparent;
+            color: var(--brand-red);
+            border: 1px solid var(--brand-red);
+            padding: 0.85rem;
+            text-align: center;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            width: 100%;
+        }
+        .btn-cotizar:hover {
+            background: var(--brand-red);
+            color: #ffffff;
+        }
+        
+        /* Formulario Corporativo */
+        .form-section {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 3rem 2.5rem;
+            max-width: 550px;
+            margin: 4rem auto 0 auto;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+        .form-section h3 {
+            margin-top: 0;
+            text-align: center;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            font-weight: 800;
+        }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--brand-muted);
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.85rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            background-color: #f8fafc;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--brand-dark);
+            background-color: #ffffff;
+        }
+        .btn-submit {
+            width: 100%;
+            background-color: var(--brand-red);
+            color: white;
+            border: none;
+            padding: 1.2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1rem;
+            letter-spacing: 0.5px;
+        }
+        .btn-submit:hover { background-color: var(--brand-red-hover); }
+        
+        footer {
+            text-align: center;
+            padding: 3.5rem 1rem;
+            background: var(--brand-dark);
+            color: #ffffff;
+            margin-top: 6rem;
+            font-size: 0.85rem;
+            border-top: 4px solid var(--brand-red);
+        }
+        footer p { opacity: 0.8; margin: 0.5rem 0; }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav>
+        <div class="logo">Agencia<span>Oficial</span></div>
+        <div class="badge-goldplan">GoldPlan Agencia Oficial</div>
+    </nav>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>OFERTAS IMBATIBLES <span>0KM</span></h1>
+        <p>Descuentos exclusivos y esquemas de financiación preferencial directos de fábrica</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- SECCIÓN VOLKSWAGEN -->
+        <div class="marca-section">
+            <div class="marca-title">Volkswagen</div>
+            <div class="grid-autos">
+                <!-- Amarok -->
+                <div class="card-auto">
+                    <div class="tag-descuento">Bonificación Especial</div>
+                    <div class="wrapper-img">
+                        <img src="https://hauswagen.com.ar" alt="Volkswagen Amarok" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://w3.org\' width=\'100\' height=\'50\' viewBox=\'0 0 100 50\'><text x=\'50%\' y=\'50%\' text-anchor=\'middle\' alignment-baseline=\'middle\' font-family=\'sans-serif\' font-size=\'10\'>Amarok</text></svg>'">
+                    </div>
+                    <div class="info-auto">
+                        <h3>Amarok</h3>
+                        <p>La Pick-Up líder en confort. Motor V6 potente, tracción 4Motion y tecnología superior.</p>
+                        <button class="btn-cotizar" onclick="seleccionarAuto('Amarok')">Cotizar con Descuento</button>
+                    </div>
+                </div>
+                <!-- T-Cross -->
+                <div class="card-auto">
+                    <div class="tag-descuento">Tasa 0%</div>
+                    <div class="wrapper-img">
+                        <img src="https://hauswagen.com.ar" alt="Volkswagen T-Cross" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://w3.org\' width=\'100\' height=\'50\' viewBox=\'0 0 100 50\'><text x=\'50%\' y=\'50%\' text-anchor=\'middle\' alignment-baseline=\'middle\' font-family=\'sans-serif\' font-size=\'10\'>T-Cross</text></svg>'">
+                    </div>
+                    <div class="info-auto">
+                        <h3>T-Cross</h3>
+                        <p>SUV versátil con la mejor tecnología de su segmento. Ideal para la ciudad.</p>
+                        <button class="btn-cotizar" onclick="seleccionarAuto('T-Cross')">Cotizar con Descuento</button>
+                    </div>
+                </div>
+                <!-- Virtus -->
+                <div class="card-auto">
+                    <div class="tag-descuento">Oferta Limitada</div>
+                    <div class="wrapper-img">
+                        <img src="https://hauswagen.com.ar" alt="Volkswagen Virtus" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://w3.org\' width=\'100\' height=\'50\' viewBox=\'0 0 100 50\'><text x=\'50%\' y=\'50%\' text-anchor=\'middle\' alignment-baseline=\'middle\' font-family=\'sans-serif\' font-size=\'10\'>Virtus</text></svg>'">
+                    </div>
+                    <div class="info-auto">
+                        <h3>Virtus</h3>
+                        <p>El sedán más vendido. Espacio, confort y un maletero imbatible de 521 litros.</p>
+                        <button class="btn-cotizar" onclick="seleccionarAuto('Virtus')">Cotizar con Descuento</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN FIAT -->
+        <div class="marca-section">
+            <div class="marca-title">Fiat</div>
+            <div class="grid-autos">
+                <!-- Titano -->
+                <div class="card-auto">
+                    <div class="tag-descuento">Financiación Directa</div>
+                    <div class="wrapper-img">
+                        <img src="https://hauswagen.com.ar" alt="Fiat Titano" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://w3.org\' width=\'100\' height=\'50\' viewBox=\'0 0 100 50\'><text x=\'50%\' y=\'50%\' text-anchor=\'middle\' alignment-baseline=\'middle\' font-family=\'sans-serif\' font-size=\'10\'>Titano</text></svg>'">
+                    </div>
+                    <div class="info-auto">
+                        <h3>Titano</h3>
+                        <p>La pickup de trabajo y aventura. Robustez, capacidad de carga y confort.</p>
+                        <button class="btn-cotizar" onclick="seleccionarAuto('Titano')">Cotizar con Descuento</button>
+                    </div>
+                </div>
+                <!-- Cronos -->
+                <div class="card-auto">
+                    <div class="tag-descuento">Instalación Cero</div>
+                    <div class="wrapper-img">
+                        <img src="https://hauswagen.com.ar" alt="Fiat Cronos" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://w3.org\' width=\'100\' height=\'50\' viewBox=\'0 0 100 50\'><text x=\'50%\' y=\'50%\' text-anchor=\'middle\' alignment-baseline=\'middle\' font-family=\'sans-serif\' font-size=\'10\'>Cronos</text></svg>'">
+                    </div>
+                    <div class="info-auto">
+                        <h3>Cronos</h3>
+                        <p>Sedán económico y espacioso. Diseño moderno y bajo consumo de combustible.</p>
+                        <button class="btn-cotizar" onclick="seleccionarAuto('Cronos')">Cotizar con Descuento</button>
+                    </div>
+                </div>
+                <!-- Mobi -->
+                <div class="card-auto">
+                    <div class="tag-descuento">Desde $0</div>
+                    <div class="wrapper-img">
+                        <img src="https://hauswagen.com.ar" alt="Fiat Mobi" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://w3.org\' width=\'100\' height=\'50\' viewBox=\'0 0 100 50\'><text x=\'50%\' y=\'50%\' text-anchor=\'middle\' alignment-baseline=\'middle\' font-family=\'sans-serif\' font-size=\'10\'>Mobi</text></svg>'">
+
+
+
+
+
+Qwen VL 235B
+
+agregar partner/2008/208
+Aquí tienes el código completo con la sección de Peugeot y Citroën agregada correctamente, incluyendo los modelos Partner, 2008 y 208, siguiendo el mismo diseño y estructura de las secciones anteriores.
+
+html
+
+Copiar
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0KM Ofertas Imbatibles | GoldPlan Agencia Oficial</title>
+    <style>
+        :root {
+            --brand-dark: #111111;
+            --brand-red: #b91c1c; 
+            --brand-red-hover: #991b1b;
+            --brand-bg: #f8fafc;
+            --brand-muted: #475569;
+            --border-color: #cbd5e1;
+            --gold: #d4af37;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--brand-bg);
+            color: var(--brand-dark);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Navbar Neutral */
+        nav {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            color: var(--brand-dark);
+        }
+        .logo span { color: var(--brand-red); }
+        
+        .badge-goldplan {
+            background: linear-gradient(135deg, #111 0%, #222 100%);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+        }
+
+        /* Hero Header */
+        header {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 3.5rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+        header h1 span { color: var(--brand-red); }
+        header p {
+            margin: 0.75rem 0 0;
+            font-size: 1.1rem;
+            color: var(--brand-muted);
+        }
+        
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        /* Secciones por Marca */
+        .marca-section {
+            margin-bottom: 4.5rem;
+        }
+        .marca-title {
+            font-size: 1.75rem;
+            text-transform: uppercase;
+            border-bottom: 3px solid var(--brand-dark);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Grilla de Catálogo */
+        .grid-autos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card-auto {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card-auto:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        
+        .tag-descuento {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--brand-red);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 3px;
+            z-index: 10;
+            letter-spacing: 0.5px;
+        }
+
+        .wrapper-img {
+            background: #ffffff;
             height: 200px;
             display: flex;
             align-items: center;
@@ -330,4 +693,28 @@
                 <div class="card-auto">
                     <div class="tag-descuento">Instalación Cero</div>
                     <div class="wrapper-img">
-                        <img src="https://hauswagen.com.ar" alt="Fiat Cronos" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://w3.org\' width=\'100\' height=\'50\' viewBox=\'0 0 100 50\'><text x=\'50%\' y=\'50%\' text-anchor=\'middle\'
+                        <img src="https://hauswagen.com.ar" alt="Fiat Cronos" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://w3.org\' width=\'100\' height=\'50\' viewBox=\'0 0 100 50\'><text x=\'50%\' y=\'50%\' text-anchor=\'middle\' alignment-baseline=\'middle\' font-family=\'sans-serif\' font-size=\'10\'>Cronos</text></svg>'">
+                    </div>
+                    <div class="info-auto">
+                        <h3>Cronos</h3>
+                        <p>Sedán económico y espacioso. Diseño moderno y bajo consumo de combustible.</p>
+                        <button class="btn-cotizar" onclick="seleccionarAuto('Cronos')">Cotizar con Descuento</button>
+                    </div>
+                </div>
+                <div class="card-auto">
+                    <div class="tag-descuento">Desde $0</div>
+                    <div class="wrapper-img">
+                        <img src="https://hauswagen.com.ar" alt="Fiat Mobi" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://w3.org\' width=\'100\' height=\'50\' viewBox=\'0 0 100 50\'><text x=\'50%\' y=\'50%\' text-anchor=\'middle\' alignment-baseline=\'middle\' font-family=\'sans-serif\' font-size=\'10\'>Mobi</text></svg>'">
+                    </div>
+                    <div class="info-auto">
+                        <h3>Mobi</h3>
+                        <p>El más ágil de la ciudad. Compacto, económico y con la mejor garantía.</p>
+                        <button class="btn-cotizar" onclick="seleccionarAuto('Mobi')">Cotizar con Descuento</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN PEUGEOT & CITROËN (NUEVA) -->
+        <div class="marca-section">
+            <div class="marca-title">Peugeot & Citroën</div>
