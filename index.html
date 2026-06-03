@@ -97,7 +97,7 @@
         /* Grilla de Catálogo */
         .grid-autos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
         
@@ -134,7 +134,7 @@
 
         .wrapper-img {
             background: #ffffff;
-            height: 220px;
+            height: 200px; /* Ajustado para mejor consistencia */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -155,13 +155,13 @@
         }
         .info-auto h3 {
             margin: 0 0 0.75rem 0;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             text-transform: uppercase;
             font-weight: 700;
         }
         .info-auto p {
             margin: 0 0 1.5rem 0;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--brand-muted);
             line-height: 1.5;
             flex-grow: 1;
@@ -180,6 +180,7 @@
             text-transform: uppercase;
             transition: all 0.2s ease;
             text-decoration: none;
+            width: 100%;
         }
         .btn-cotizar:hover {
             background: var(--brand-red);
@@ -283,7 +284,7 @@
                     </div>
                     <div class="info-auto">
                         <h3>Amarok</h3>
-                        <p>La Pick-Up líder en confort de marcha y potencia. Equipada con el motor V6 más potente de su categoría, tracción integral permanente 4Motion y un interior tecnológico superior para el trabajo y el uso diario.</p>
+                        <p>La Pick-Up líder en confort. Motor V6 potente, tracción 4Motion y tecnología superior.</p>
                         <button class="btn-cotizar" onclick="seleccionarAuto('Amarok')">Cotizar con Descuento</button>
                     </div>
                 </div>
@@ -293,3 +294,57 @@
                     <div class="wrapper-img">
                         <img src="https://hauswagen.com.ar" alt="Volkswagen T-Cross" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://w3.org\' width=\'100\' height=\'50\' viewBox=\'0 0 100 50\'><text x=\'50%\' y=\'50%\' text-anchor=\'middle\' alignment-baseline=\'middle\' font-family=\'sans-serif\' font-size=\'10\'>T-Cross</text></svg>'">
                     </div>
+                    <div class="info-auto">
+                        <h3>T-Cross</h3>
+                        <p>SUV versátil con la mejor tecnología de su segmento. Ideal para la ciudad.</p>
+                        <button class="btn-cotizar" onclick="seleccionarAuto('T-Cross')">Cotizar con Descuento</button>
+                    </div>
+                </div>
+                <!-- Virtus -->
+                <div class="card-auto">
+                    <div class="tag-descuento">Oferta Limitada</div>
+                    <div class="wrapper-img">
+                        <img src="https://hauswagen.com.ar" alt="Volkswagen Virtus" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://w3.org\' width=\'100\' height=\'50\' viewBox=\'0 0 100 50\'><text x=\'50%\' y=\'50%\' text-anchor=\'middle\' alignment-baseline=\'middle\' font-family=\'sans-serif\' font-size=\'10\'>Virtus</text></svg>'">
+                    </div>
+                    <div class="info-auto">
+                        <h3>Virtus</h3>
+                        <p>El sedán más vendido. Espacio, confort y un maletero imbatible de 521 litros.</p>
+                        <button class="btn-cotizar" onclick="seleccionarAuto('Virtus')">Cotizar con Descuento</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN FIAT -->
+        <div class="marca-section">
+            <div class="marca-title">Fiat</div>
+            <div class="grid-autos">
+                <!-- Titano -->
+                <div class="card-auto">
+                    <div class="tag-descuento">Financiación Directa</div>
+                    <div class="wrapper-img">
+                        <img src="https://hauswagen.com.ar" alt="Fiat Titano" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://w3.org\' width=\'100\' height=\'50\' viewBox=\'0 0 100 50\'><text x=\'50%\' y=\'50%\' text-anchor=\'middle\' alignment-baseline=\'middle\' font-family=\'sans-serif\' font-size=\'10\'>Titano</text></svg>'">
+                    </div>
+                    <div class="info-auto">
+                        <h3>Titano</h3>
+                        <p>La pickup de trabajo y aventura. Robustez, capacidad de carga y confort.</p>
+                        <button class="btn-cotizar" onclick="seleccionarAuto('Titano')">Cotizar con Descuento</button>
+                    </div>
+                </div>
+                <!-- Cronos -->
+                <div class="card-auto">
+                    <div class="tag-descuento">Instalación Cero</div>
+                    <div class="wrapper-img">
+                        <img src="https://hauswagen.com.ar" alt="Fiat Cronos" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://w3.org\' width=\'100\' height=\'50\' viewBox=\'0 0 100 50\'><text x=\'50%\' y=\'50%\' text-anchor=\'middle\' alignment-baseline=\'middle\' font-family=\'sans-serif\' font-size=\'10\'>Cronos</text></svg>'">
+                    </div>
+                    <div class="info-auto">
+                        <h3>Cronos</h3>
+                        <p>Sedán económico y espacioso. Diseño moderno y bajo consumo de combustible.</p>
+                        <button class="btn-cotizar" onclick="seleccionarAuto('Cronos')">Cotizar con Descuento</button>
+                    </div>
+                </div>
+                <!-- Mobi -->
+                <div class="card-auto">
+                    <div class="tag-descuento">Desde $0</div>
+                    <div class="wrapper-img">
+                        <img src="https://hauswagen.com.ar" alt="Fiat Mobi" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://w3.org\' width=\'100\' height=\'50\' viewBox=\'0 0 100 50\'><text x=\'50%\' y=\'50%\' text-anchor=\'middle\' alignment-baseline=\'middle\' font-family=\'sans-serif\' font-size=\'10\'>Mobi</text></svg>'">
